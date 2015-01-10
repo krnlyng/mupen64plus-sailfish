@@ -1,5 +1,4 @@
 Name:		mupen64plus
-BuildArch:	armv7hl
 Version:	2.0
 Release:	1%{?dist}
 Summary:	Nintendo 64 Emulator
