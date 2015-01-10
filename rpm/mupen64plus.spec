@@ -51,25 +51,25 @@ cd ..
 
 %install
 cd mupen64plus-audio-sdl
-PREFIX=%{_prefix} make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-core
-PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 make install -C projects/unix
 cd ..
 cd mupen64plus-input-sdl
-PREFIX=%{_prefix} make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-input-sdltouch
-PREFIX=%{_prefix} make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-rsp-hle
-PREFIX=%{_prefix} make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-ui-console
-PREFIX=%{_prefix} make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-video-glide64mk2
-PREFIX=%{_prefix} NO_SSE=1 USE_GLES=1 make install -C projects/unix
+DESTDIR=%{buildroot} PREFIX=%{_prefix} NO_SSE=1 USE_GLES=1 make install -C projects/unix
 cd ..
 
 %clean
