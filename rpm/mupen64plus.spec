@@ -50,7 +50,6 @@ PREFIX=%{_prefix} OPTFLAGS=-O3 NO_SSE=1 USE_GLES=1 make all -C projects/unix
 cd ..
 
 %install
-mkdir -p %{buildroot}/usr/lib/mupen64plus
 cd mupen64plus-audio-sdl
 PREFIX=%{_prefix} make install -C projects/unix
 cd ..
