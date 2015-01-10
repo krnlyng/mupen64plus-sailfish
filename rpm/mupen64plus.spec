@@ -104,6 +104,10 @@ cd ..
 %files
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
+%{_datadir}/applications/mupen64plus.desktop
+%{_datadir}/icons/hicolor/48x48/apps/mupen64plus.png
+%{_datadir}/icons/hicolor/scalable/apps/mupen64plus.svg
+%{_datadir}/man/man6/mupen64plus.6.gz
 %{_libdir}/mupen64plus/mupen64plus-audio-sdl.so
 %{_libdir}/libmupen64plus.so.*
 %{_datadir}/mupen64plus/font.ttf
