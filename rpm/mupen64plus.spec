@@ -13,6 +13,7 @@ BuildRequires:	bash
 BuildRequires:	gcc-c++
 BuildRequires:	boost-devel
 BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(egl)
 BuildRequires:	pkgconfig(glesv2)
 BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(zlib)
