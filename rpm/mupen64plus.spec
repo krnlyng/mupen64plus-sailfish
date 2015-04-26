@@ -74,6 +74,9 @@ cd ..
 cd mupen64plus-video-glide64mk2
 DESTDIR=%{buildroot} PREFIX=%{_prefix} NO_SSE=1 USE_GLES=1 make install -C projects/unix
 cd ..
+cd mupen64plus-video-rice
+DESTDIR=%{buildroot} PREFIX=%{_prefix} NO_ASM=1 USE_GLES=1 make install -C projects/unix
+cd ..
 
 %clean
 cd mupen64plus-audio-sdl
@@ -96,6 +99,9 @@ PREFIX=%{_prefix} make clean -C projects/unix
 cd ..
 cd mupen64plus-video-glide64mk2
 PREFIX=%{_prefix} NO_SSE=1 USE_GLES=1 make clean -C projects/unix
+cd ..
+cd mupen64plus-video-rice
+PREFIX=%{_prefix} NO_ASM=1 USE_GLES=1 make clean -C projects/unix
 cd ..
 
 %post
