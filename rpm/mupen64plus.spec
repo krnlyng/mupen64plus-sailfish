@@ -49,7 +49,7 @@ cd mupen64plus-video-glide64mk2
 PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd -gstabs" NO_SSE=1 USE_GLES=1 make all -C projects/unix
 cd ..
 cd mupen64plus-video-rice
-PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O2 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C projects/unix
 cd ..
 
 %install
