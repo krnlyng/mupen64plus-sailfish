@@ -123,7 +123,7 @@ cd ..
 %{_libdir}/mupen64plus/mupen64plus-rsp-hle.so
 %{_libdir}/mupen64plus/mupen64plus-video-glide64mk2.so
 %{_datadir}/mupen64plus/Glide64mk2.ini
-
+%{_datadir}/mupen64plus/RiceVideoLinux.ini
 %changelog
 * Sat Dec 27 2014 Franz-Josef Haider <f_haider@gmx.at> - 2.0-1
 - Initial package 
