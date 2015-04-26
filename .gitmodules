@@ -10,9 +10,6 @@
 [submodule "mupen64plus-audio-sdl"]
 	path = mupen64plus-audio-sdl
 	url = https://github.com/mupen64plus/mupen64plus-audio-sdl
-[submodule "mupen64plus-core"]
-	path = mupen64plus-core
-	url = https://github.com/mupen64plus/mupen64plus-core.git
 [submodule "mupen64plus-video-glide64mk2"]
 	path = mupen64plus-video-glide64mk2
 	url = https://github.com/krnlyng/mupen64plus-video-glide64mk2.git
@@ -22,3 +19,6 @@
 [submodule "mupen64plus-ui-console"]
 	path = mupen64plus-ui-console
 	url = https://github.com/krnlyng/mupen64plus-ui-console
+[submodule "mupen64plus-core"]
+	path = mupen64plus-core
+	url = https://github.com/krnlyng/mupen64plus-core
