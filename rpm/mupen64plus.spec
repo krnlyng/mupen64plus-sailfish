@@ -37,7 +37,7 @@ cd mupen64plus-input-sdl
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-input-sdltouch
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-rsp-hle
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
@@ -46,7 +46,7 @@ cd mupen64plus-ui-console
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-video-glide64mk2
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" NO_SSE=1 USE_GLES=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd -gstabs" NO_SSE=1 USE_GLES=1 make all -C projects/unix
 cd ..
 
 %install
