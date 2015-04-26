@@ -28,25 +28,25 @@ which is capable of accurately playing many games.
 
 %build
 cd mupen64plus-audio-sdl
-PREFIX=%{_prefix} OPTFLAGS=-O3 V=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" V=1 make all -C projects/unix
 cd ..
 cd mupen64plus-core
-PREFIX=%{_prefix} OPTFLAGS=-O3 USE_GLES=1 OSD=0 NEON=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" USE_GLES=1 OSD=0 NEON=1 make all -C projects/unix
 cd ..
 cd mupen64plus-input-sdl
-PREFIX=%{_prefix} OPTFLAGS=-O3 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-input-sdltouch
-PREFIX=%{_prefix} OPTFLAGS=-O3 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-rsp-hle
-PREFIX=%{_prefix} OPTFLAGS=-O3 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-ui-console
-PREFIX=%{_prefix} OPTFLAGS=-O3 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
 cd ..
 cd mupen64plus-video-glide64mk2
-PREFIX=%{_prefix} OPTFLAGS=-O3 NO_SSE=1 USE_GLES=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" NO_SSE=1 USE_GLES=1 make all -C projects/unix
 cd ..
 
 %install
