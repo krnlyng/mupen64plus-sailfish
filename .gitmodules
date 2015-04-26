@@ -1,6 +1,3 @@
-[submodule "mupen64plus-ui-console"]
-	path = mupen64plus-ui-console
-	url = https://github.com/krnlyng/mupen64plus-ui-console
 [submodule "mupen64plus-rsp-hle"]
 	path = mupen64plus-rsp-hle
 	url = https://github.com/mupen64plus/mupen64plus-rsp-hle.git
@@ -19,3 +16,9 @@
 [submodule "mupen64plus-video-glide64mk2"]
 	path = mupen64plus-video-glide64mk2
 	url = https://github.com/krnlyng/mupen64plus-video-glide64mk2.git
+[submodule "mupen64plus-video-rice"]
+	path = mupen64plus-video-rice
+	url = https://github.com/mupen64plus/mupen64plus-video-rice
+[submodule "mupen64plus-ui-console"]
+	path = mupen64plus-ui-console
+	url = https://github.com/krnlyng/mupen64plus-ui-console
