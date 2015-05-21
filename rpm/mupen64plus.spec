@@ -20,7 +20,7 @@ BuildRequires:  pkgconfig(audioresource)
 BuildRequires:  pkgconfig(glib-2.0)
 
 %description
-Mupen64plus is a cross-platform plugin bases N64 emulator
+Mupen64plus is a cross-platform plugin based N64 emulator
 which is capable of accurately playing many games.
 
 %prep
