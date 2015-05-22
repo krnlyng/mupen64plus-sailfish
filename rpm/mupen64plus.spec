@@ -11,6 +11,8 @@ Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	bash
 BuildRequires:	gcc-c++
 BuildRequires:  cmake
+BuildRequires:  freetype-devel
+BuildRequires:  zlib-devel
 BuildRequires:	boost-devel
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(egl)
