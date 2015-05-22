@@ -51,6 +51,11 @@ cd ..
 cd mupen64plus-video-rice
 PREFIX=%{_prefix} OPTFLAGS="-O2 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C projects/unix
 cd ..
+mkdir GLideN64/src/build
+cd GLideN64/src/build
+cmake -DMUPENPLUSAPI=On -DOPENGLES2=On ..
+make
+cd ../../..
 
 %install
 cd mupen64plus-audio-sdl
@@ -77,6 +82,9 @@ cd ..
 cd mupen64plus-video-rice
 DESTDIR=%{buildroot} PREFIX=%{_prefix} NO_ASM=1 USE_GLES=1 make install -C projects/unix
 cd ..
+cd GLideN64/src/build/plugin/release/
+install -d ${_libdir}/mupen64plus/
+install mupen64plus-video-GLideN64.so ${_libdir}/mupen64plus/
 
 %clean
 cd mupen64plus-audio-sdl
@@ -102,6 +110,9 @@ PREFIX=%{_prefix} NO_SSE=1 USE_GLES=1 make clean -C projects/unix
 cd ..
 cd mupen64plus-video-rice
 PREFIX=%{_prefix} NO_ASM=1 USE_GLES=1 make clean -C projects/unix
+cd ..
+cd GLideN64
+rm -rf src/build
 cd ..
 
 %post
@@ -131,6 +142,10 @@ cd ..
 %{_datadir}/mupen64plus/Glide64mk2.ini
 %{_libdir}/mupen64plus/mupen64plus-video-rice.so
 %{_datadir}/mupen64plus/RiceVideoLinux.ini
+%{_libdir}/mupen64plus/mupen64plus-video-GLideN64.so
+
 %changelog
 * Sat Dec 27 2014 Franz-Josef Haider <f_haider@gmx.at> - 2.0-1
-- Initial package 
+- Initial package
+- fixed the default settings for devices like LG Nexus 5. remove ~/.config/mupen64plus/mupen64plus.cfg if you have no touch input or rotation issues.
+- added GLideN64 plugin (work in progress)
