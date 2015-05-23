@@ -57,7 +57,7 @@ cd ..
 mkdir GLideN64/src/build
 cd GLideN64/src/build
 cmake -DMUPENPLUSAPI=On -DOPENGLES2=On ..
-make
+make VERBOSE=1
 cd ../../..
 
 %install
