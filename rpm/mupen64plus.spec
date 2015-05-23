@@ -86,8 +86,7 @@ cd mupen64plus-video-rice
 DESTDIR=%{buildroot} PREFIX=%{_prefix} NO_ASM=1 USE_GLES=1 make install -C projects/unix
 cd ..
 cd GLideN64/src/build/plugin/release/
-install -d %{_libdir}/mupen64plus/
-install mupen64plus-video-GLideN64.so %{_libdir}/mupen64plus/
+install -m 0644 -s mupen64plus-video-GLideN64.so "%{buildroot}/%{_libdir}/mupen64plus/"
 
 %clean
 cd mupen64plus-audio-sdl
