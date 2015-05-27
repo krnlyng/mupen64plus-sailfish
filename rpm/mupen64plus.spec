@@ -150,4 +150,7 @@ cd ..
 * Sat Dec 27 2014 Franz-Josef Haider <f_haider@gmx.at> - 2.0-1
 - Initial package
 - fixed the default settings for devices like LG Nexus 5. remove ~/.config/mupen64plus/mupen64plus.cfg if you have no touch input or rotation issues.
-- added GLideN64 plugin (work in progress)
+- added GLideN64 plugin (work in progress) to enable set InputPlugin = "mupen64plus-video-GLideN64.so" in ~/.config/mupen64plus/mupen64plus.cfg
+- fixed default resolution for LG Nexus 5
+- buttons are now transparent in every game
+
