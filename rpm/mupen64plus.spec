@@ -55,6 +55,9 @@ cd mupen64plus-video-rice
 PREFIX=%{_prefix} OPTFLAGS="-O2 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C projects/unix
 cd ..
 mkdir GLideN64/src/build
+cd GLideN64/src
+./getRevision.sh
+cd ../..
 cd GLideN64/src/build
 cmake -DMUPENPLUSAPI=On -DGLES2=On ..
 make VERBOSE=1
