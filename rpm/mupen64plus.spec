@@ -56,7 +56,7 @@ PREFIX=%{_prefix} OPTFLAGS="-O2 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C pr
 cd ..
 mkdir GLideN64/src/build
 cd GLideN64/src/build
-cmake -DMUPENPLUSAPI=On -DOPENGLES2=On ..
+cmake -DMUPENPLUSAPI=On -DGLES2=On ..
 make VERBOSE=1
 cd ../../..
 
