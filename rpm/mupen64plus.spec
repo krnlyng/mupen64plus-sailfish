@@ -8,6 +8,7 @@ License:	GPLv2
 URL:		http://code.google.com/p/mupen64plus
 Source0:	%{name}-%{version}.tar.bz2
 
+BuildRequires:  wayland-devel
 BuildRequires:  git
 BuildRequires:	bash
 BuildRequires:	gcc-c++
