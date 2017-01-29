@@ -54,7 +54,7 @@ cd mupen64plus-video-glide64mk2
 %ifarch %{arm}
 PREFIX=%{_prefix} OPTFLAGS="-O3" NO_SSE=1 USE_GLES=1 make all -C projects/unix
 %endif
-%ifarch %{x86}
+%ifarch %{ix86}
 PREFIX=%{_prefix} OPTFLAGS="-O3" USE_GLES=1 make all -C projects/unix
 %endif
 cd ..
@@ -62,7 +62,7 @@ cd mupen64plus-video-rice
 %ifarch %{arm}
 PREFIX=%{_prefix} OPTFLAGS="-O2" NO_ASM=1 USE_GLES=1 make all -C projects/unix
 %endif
-%ifarch %{x86}
+%ifarch %{ix86}
 PREFIX=%{_prefix} OPTFLAGS="-O2" USE_GLES=1 make all -C projects/unix
 %endif
 cd ..
@@ -74,7 +74,7 @@ cd GLideN64/src/build
 %ifarch %{arm}
 cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 -DCRC_ARMV8 ..
 %endif
-%ifarch %{x86}
+%ifarch %{ix86}
 cmake -DMUPENPLUSAPI=On -DGLES2=On ..
 %endif
 make VERBOSE=1
