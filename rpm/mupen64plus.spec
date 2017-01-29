@@ -76,7 +76,7 @@ cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 -DCRC_ARMV8 ..
 %endif
 %ifarch %{x86}
 cmake -DMUPENPLUSAPI=On -DGLES2=On ..
-endif
+%endif
 make VERBOSE=1
 cd ../../..
 
