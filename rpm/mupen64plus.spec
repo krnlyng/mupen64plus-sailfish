@@ -72,7 +72,7 @@ cd GLideN64/src
 cd ../..
 cd GLideN64/src/build
 %ifarch %{arm}
-cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 -DCRC_ARMV8=On ..
+cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 ..
 %endif
 %ifarch %{ix86}
 cmake -DMUPENPLUSAPI=On -DGLES2=On ..
