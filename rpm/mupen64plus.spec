@@ -33,35 +33,50 @@ which is capable of accurately playing many games.
 
 %build
 cd mupen64plus-audio-sdl
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" V=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" V=1 make all -C projects/unix
 cd ..
 cd mupen64plus-core
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" USE_GLES=1 OSD=0 NEON=1 make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" USE_GLES=1 OSD=0 NEON=1 make all -C projects/unix
 cd ..
 cd mupen64plus-input-sdl
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" make all -C projects/unix
 cd ..
 cd mupen64plus-input-sdltouch
-PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd" make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
 cd ..
 cd mupen64plus-rsp-hle
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
 cd ..
 cd mupen64plus-ui-console
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto -fuse-ld=bfd" make all -C projects/unix
+PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
 cd ..
 cd mupen64plus-video-glide64mk2
-PREFIX=%{_prefix} OPTFLAGS="-O3 -fuse-ld=bfd" NO_SSE=1 USE_GLES=1 make all -C projects/unix
+%ifarch %{arm}
+PREFIX=%{_prefix} OPTFLAGS="-O3" NO_SSE=1 USE_GLES=1 make all -C projects/unix
+%endif
+%ifarch %{x86}
+PREFIX=%{_prefix} OPTFLAGS="-O3" USE_GLES=1 make all -C projects/unix
+%endif
 cd ..
 cd mupen64plus-video-rice
-PREFIX=%{_prefix} OPTFLAGS="-O2 -fuse-ld=bfd" NO_ASM=1 USE_GLES=1 make all -C projects/unix
+%ifarch %{arm}
+PREFIX=%{_prefix} OPTFLAGS="-O2" NO_ASM=1 USE_GLES=1 make all -C projects/unix
+%endif
+%ifarch %{x86}
+PREFIX=%{_prefix} OPTFLAGS="-O2" USE_GLES=1 make all -C projects/unix
+%endif
 cd ..
 mkdir GLideN64/src/build
 cd GLideN64/src
 ./getRevision.sh
 cd ../..
 cd GLideN64/src/build
+%ifarch %{arm}
+cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 -DCRC_ARMV8 ..
+%endif
+%ifarch %{x86}
 cmake -DMUPENPLUSAPI=On -DGLES2=On ..
+endif
 make VERBOSE=1
 cd ../../..
 
