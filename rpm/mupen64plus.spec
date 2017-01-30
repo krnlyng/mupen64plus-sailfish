@@ -180,6 +180,14 @@ cd ..
 
 
 %changelog
+* Mon Jan 30 2017 Franz-Josef Haider <f_haider@gmx.at> - 2.0-2
+- more plugins (gles2n64)
+- improvements to all video plugins (mostly proper rotation of contents)
+- set gles2n64 as default plugin
+- improved the touch plugin (buttons don't magically disappear)
+- update to support latest sailfishos version
+- various other improvements
+
 * Sat Dec 27 2014 Franz-Josef Haider <f_haider@gmx.at> - 2.0-1
 - Initial package
 - fixed the default settings for devices like LG Nexus 5. remove ~/.config/mupen64plus/mupen64plus.cfg if you have no touch input or rotation issues.
