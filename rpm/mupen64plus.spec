@@ -75,7 +75,7 @@ cd GLideN64/src
 cd ../..
 cd GLideN64/src/build
 %ifarch %{arm}
-cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 -DCMAKE_CXX_FLAGS="-ftree-vectorize -mvectorize-with-neon-quad -ftree-vectorizer-verbose=2 -funsafe-math-optimizations -fno-finite-math-only" ..
+cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 ..
 %endif
 %ifarch %{ix86}
 cmake -DMUPENPLUSAPI=On -DGLES2=On -DCMAKE_CXX_FLAGS="-ftree-vectorize -ftree-vectorizer-verbose=2 -funsafe-math-optimizations -fno-finite-math-only" ..
