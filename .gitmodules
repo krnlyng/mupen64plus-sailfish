@@ -25,3 +25,6 @@
 [submodule "GLideN64"]
 	path = GLideN64
 	url = https://github.com/krnlyng/GLideN64
+[submodule "mupen64plus-video-gles2n64-1"]
+	path = mupen64plus-video-gles2n64-1
+	url = https://github.com/krnlyng/mupen64plus-video-gles2n64-1
