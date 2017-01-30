@@ -44,6 +44,9 @@ cd ..
 cd mupen64plus-input-sdltouch
 PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
 cd ..
+cd mupen64plus-input-gles2n64-1
+USE_GLES=1 PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
+cd ..
 cd mupen64plus-rsp-hle
 PREFIX=%{_prefix} OPTFLAGS="-O3" make all -C projects/unix
 cd ..
@@ -93,6 +96,9 @@ cd ..
 cd mupen64plus-input-sdltouch
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
+cd mupen64plus-input-gles2n64-1
+USE_GLES=1 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
+cd ..
 cd mupen64plus-rsp-hle
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
@@ -120,6 +126,9 @@ PREFIX=%{_prefix} make clean -C projects/unix
 cd ..
 cd mupen64plus-input-sdltouch
 PREFIX=%{_prefix} make clean -C projects/unix
+cd ..
+cd mupen64plus-input-gles2n64-1
+USE_GLES=1 PREFIX=%{_prefix} make clean -C projects/unix
 cd ..
 cd mupen64plus-rsp-hle
 PREFIX=%{_prefix} make clean -C projects/unix
@@ -159,6 +168,7 @@ cd ..
 %{_libdir}/mupen64plus/mupen64plus-input-sdl.so
 %{_datadir}/mupen64plus/InputAutoCfg.ini
 %{_libdir}/mupen64plus/mupen64plus-input-sdltouch.so
+%{_libdir}/mupen64plus/mupen64plus-input-n64.so
 %{_libdir}/mupen64plus/mupen64plus-rsp-hle.so
 %{_libdir}/mupen64plus/mupen64plus-video-glide64mk2.so
 %{_datadir}/mupen64plus/Glide64mk2.ini
