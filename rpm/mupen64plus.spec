@@ -98,6 +98,7 @@ DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-video-gles2n64-1
 USE_GLES=1 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
+rm %{buildroot}/%{_datadir}/mupen64plus/gles2n64.conf # auto generated with better settings
 cd ..
 cd mupen64plus-rsp-hle
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
@@ -175,6 +176,8 @@ cd ..
 %{_libdir}/mupen64plus/mupen64plus-video-rice.so
 %{_datadir}/mupen64plus/RiceVideoLinux.ini
 %{_libdir}/mupen64plus/mupen64plus-video-GLideN64.so
+%{_datadir}/mupen64plus/gles2n64rom.conf
+
 
 %changelog
 * Sat Dec 27 2014 Franz-Josef Haider <f_haider@gmx.at> - 2.0-1
