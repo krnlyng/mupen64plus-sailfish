@@ -28,3 +28,6 @@
 [submodule "mupen64plus-video-gles2n64-1"]
 	path = mupen64plus-video-gles2n64-1
 	url = https://github.com/krnlyng/mupen64plus-video-gles2n64-1
+[submodule "mupen64plus-launcher-sailfish"]
+	path = mupen64plus-launcher-sailfish
+	url = https://github.com/krnlyng/mupen64plus-launcher-sailfish

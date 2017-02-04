@@ -8,6 +8,8 @@ License:	GPLv2
 URL:		http://code.google.com/p/mupen64plus
 Source0:	%{name}-%{version}.tar.bz2
 
+Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   sailfish-components-filemanager
 BuildRequires:  wayland-devel
 BuildRequires:  git
 BuildRequires:	bash
@@ -16,6 +18,13 @@ BuildRequires:  cmake
 BuildRequires:  freetype-devel
 BuildRequires:  zlib-devel
 BuildRequires:	boost-devel
+BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
+BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Multimedia)
+BuildRequires:  desktop-file-utils
+BuildRequires:  libaudioresource-qt-devel
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(egl)
 BuildRequires:	pkgconfig(glesv2)
@@ -32,6 +41,10 @@ which is capable of accurately playing many games.
 %setup -q
 
 %build
+cd mupen64plus-launcher-sailfish
+qmake
+make
+cd ..
 cd mupen64plus-audio-sdl
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" V=1 make all -C projects/unix
 cd ..
@@ -84,6 +97,9 @@ make VERBOSE=1
 cd ../../..
 
 %install
+cd mupen64plus-launcher-sailfish
+INSTALL_ROOT=%{buildroot} make install
+cd ..
 cd mupen64plus-audio-sdl
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
@@ -116,6 +132,9 @@ cd GLideN64/src/build/plugin/release/
 install -m 0644 -s mupen64plus-video-GLideN64.so "%{buildroot}/%{_libdir}/mupen64plus/"
 
 %clean
+cd mupen64plus-launcher-sailfish
+make clean
+cd ..
 cd mupen64plus-audio-sdl
 PREFIX=%{_prefix} make clean -C projects/unix
 cd ..
@@ -177,7 +196,10 @@ cd ..
 %{_datadir}/mupen64plus/RiceVideoLinux.ini
 %{_libdir}/mupen64plus/mupen64plus-video-GLideN64.so
 %{_datadir}/mupen64plus/gles2n64rom.conf
-
+%{_bindir}/harbour-%{name}-gui-sailfishos
+%{_datadir}/harbour-%{name}-gui-sailfishos
+%{_datadir}/applications/harbour-%{name}-gui-sailfishos.desktop
+%{_datadir}/icons/hicolor/*/apps/harbour-%{name}-gui-sailfishos.png
 
 %changelog
 * Mon Jan 30 2017 Franz-Josef Haider <f_haider@gmx.at> - 2.0-2
