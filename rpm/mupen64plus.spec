@@ -32,6 +32,7 @@ BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:  pkgconfig(audioresource)
 BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  nasm
 
 %description
 Mupen64plus is a cross-platform plugin based N64 emulator
