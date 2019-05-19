@@ -49,7 +49,12 @@ cd mupen64plus-audio-sdl
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" V=1 make all -C projects/unix
 cd ..
 cd mupen64plus-core
-PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" USE_GLES=1 OSD=0 NEON=1 make all -C projects/unix
+%ifarch %{arm}
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" USE_GLES=1 OSD=0 NEON=1 NEW_DYNAREC=1 make all -C projects/unix
+%endif
+%ifarch %{ix86}
+PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" USE_GLES=1 OSD=0 NEW_DYNAREC=1 make all -C projects/unix
+%endif
 cd ..
 cd mupen64plus-input-sdl
 PREFIX=%{_prefix} OPTFLAGS="-O3 -flto" make all -C projects/unix
@@ -104,7 +109,12 @@ cd mupen64plus-audio-sdl
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
 cd ..
 cd mupen64plus-core
-DESTDIR=%{buildroot} PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 make install -C projects/unix
+%ifarch %{arm}
+DESTDIR=%{buildroot} PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 NEW_DYNAREC=1 make install -C projects/unix
+%endif
+%ifarch %{ix86}
+DESTDIR=%{buildroot} PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEW_DYNAREC=1 make install -C projects/unix
+%endif
 cd ..
 cd mupen64plus-input-sdl
 DESTDIR=%{buildroot} PREFIX=%{_prefix} make install -C projects/unix
@@ -139,7 +149,12 @@ cd mupen64plus-audio-sdl
 PREFIX=%{_prefix} make clean -C projects/unix
 cd ..
 cd mupen64plus-core
-PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 make clean -C projects/unix
+%ifarch %{arm}
+PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEON=1 NEW_DYNAREC=1 make clean -C projects/unix
+%endif
+%ifarch %{ix86}
+PREFIX=%{_prefix} USE_GLES=1 OSD=0 NEW_DYNAREC=1 make clean -C projects/unix
+%endif
 cd ..
 cd mupen64plus-input-sdl
 PREFIX=%{_prefix} make clean -C projects/unix
