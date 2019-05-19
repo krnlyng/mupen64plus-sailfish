@@ -82,16 +82,16 @@ PREFIX=%{_prefix} OPTFLAGS="-O2" NO_ASM=1 USE_GLES=1 make all -C projects/unix
 PREFIX=%{_prefix} OPTFLAGS="-O2" USE_GLES=1 make all -C projects/unix
 %endif
 cd ..
-mkdir GLideN64/src/build
+mkdir -p GLideN64/src/build
 cd GLideN64/src
 ./getRevision.sh
 cd ../..
 cd GLideN64/src/build
 %ifarch %{arm}
-cmake -DMUPENPLUSAPI=On -DGLES2=On -DNEON_OPT=1 ..
+cmake -DMUPENPLUSAPI=On -DUSE_SYSTEM_LIBS=On -DEGL=On -DGLES2=On -DNEON_OPT=1 ..
 %endif
 %ifarch %{ix86}
-cmake -DMUPENPLUSAPI=On -DGLES2=On -DCMAKE_CXX_FLAGS="-ftree-vectorize -ftree-vectorizer-verbose=2 -funsafe-math-optimizations -fno-finite-math-only" ..
+cmake -DMUPENPLUSAPI=On -DUSE_SYSTEM_LIBS=On -DEGL=On -DGLES2=On -DCMAKE_CXX_FLAGS="-ftree-vectorize -ftree-vectorizer-verbose=2 -funsafe-math-optimizations -fno-finite-math-only" ..
 %endif
 make VERBOSE=1
 cd ../../..
